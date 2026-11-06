@@ -1,0 +1,61 @@
+
+/*
+ * Program : Kalkulator Sederhana dengan Menu
+ * Nama    : Rifa Esta Adalia
+ * NIM     : 12046126018
+ * Deskripsi: Kalkulator menggunakan switch-case
+ */
+
+#include <stdio.h>
+
+int main() {
+    int pilihan;
+    float angka1, angka2, hasil;
+
+    printf("=== KALKULATOR SI ===\n");
+    printf("1. Penjumlahan\n");
+    printf("2. Pengurangan\n");
+    printf("3. Perkalian\n");
+    printf("4. Pembagian\n");
+    printf("Pilih operasi (1-4): ");
+    scanf("%d", &pilihan);
+
+    if (pilihan < 1 || pilihan > 4) {
+        printf("Pilihan operasi tidak valid\n");
+        return 0;
+    }
+
+    printf("Masukkan bilangan pertama: ");
+    scanf("%f", &angka1);
+
+    printf("Masukkan bilangan kedua: ");
+    scanf("%f", &angka2);
+
+    switch (pilihan) {
+        case 1:
+            hasil = angka1 + angka2;
+            printf("Hasil penjumlahan: %.2f\n", hasil);
+            break;
+
+        case 2:
+            hasil = angka1 - angka2;
+            printf("Hasil pengurangan: %.2f\n", hasil);
+            break;
+
+        case 3:
+            hasil = angka1 * angka2;
+            printf("Hasil perkalian: %.2f\n", hasil);
+            break;
+
+        case 4:
+            if (angka2 == 0) {
+                printf("Tidak bisa dibagi nol\n");
+            } else {
+                hasil = angka1 / angka2;
+                printf("Hasil pembagian: %.2f\n", hasil);
+            }
+            break;
+    }
+
+    return 0;
+}
